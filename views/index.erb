@@ -1,0 +1,41 @@
+<html>
+  <head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="min.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="row">
+      <div id="left" class="col c3">
+        Spacer
+      </div>
+      <div id="main" class="col c9">
+        <% $feeds.each do |feed| %>
+          <table class="table">
+            <thead>
+              <th class="toggle"><button data-toggle="collapse" data-target=".collapse"> - </button></th>
+              <th><strong><%= feed.title %></strong></th>
+            </thead>
+            <tbody>
+              <input id=
+              <% feed.items.each do |item| %>
+              <tr>
+                <td><%= feed.dc_date or feed.pubDate %></td>
+                <td>
+                  <a href="<%= item.link %>">
+                    <span class="headline">
+                      <%= item.title %>
+                    </span>
+                  </a>
+                  <br />
+                  <p><em><%= item.description.to_s %> &hellip; </em></p></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% end %>
+      </div>
+    </div>
+    <script src="collapse.js"></script>
+  </body>
+</html>

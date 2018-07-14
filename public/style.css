@@ -1,0 +1,27 @@
+#left {
+  height: 100%;
+}
+
+figure {
+  max-width: 300px;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+.collapse { 
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(0,1,0,1);
+}
+
+.show {
+  max-height: 99em;
+  transition: max-height .5s ease-in-out;
+}
+
+.toggle button {
+  background: none;
+}
